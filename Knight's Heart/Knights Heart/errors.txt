@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/sound.rpy", line 5: expected statement.
+    music Forest ambient = "Characters/Elanwe/Elanwe default2.png"
+                         ^
+
+Ren'Py Version: Ren'Py 7.4.11.2266
+Tue Apr 19 17:58:22 2022
