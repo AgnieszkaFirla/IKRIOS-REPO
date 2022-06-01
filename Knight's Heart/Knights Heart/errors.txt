@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/sound.rpy", line 5: expected statement.
-    music Forest ambient = "Characters/Elanwe/Elanwe default2.png"
-                         ^
+File "game/script.rpy", line 177: end of line expected.
+    "Wy ścierwa! Zapłacicie za to życiem!" "{i}(Walka)":
+                                                       ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Tue Apr 19 17:58:22 2022
+Wed Jun  1 14:53:52 2022

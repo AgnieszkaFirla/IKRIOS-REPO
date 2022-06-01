@@ -1,28 +1,54 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 40, in script
-    hide Korst neutral with meveinleft
-  File "game/script.rpy", line 40, in <module>
-    hide Korst neutral with meveinleft
-NameError: name 'meveinleft' is not defined
+  File "game/script.rpy", line 87, in script call
+    call Option3
+  File "game/script.rpy", line 208, in script
+    scene bg town
+  File "renpy/common/000window.rpy", line 111, in _window_auto_callback
+    _window_hide(auto=True)
+  File "renpy/common/000window.rpy", line 101, in _window_hide
+    renpy.with_statement(trans)
+IOError: Couldn't find file 'audio/Land of Wolves/WAV_02_A_Tipsy_Tavern_loop'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 40, in script
-    hide Korst neutral with meveinleft
-  File "renpy/ast.py", line 1439, in execute
-    paired = renpy.python.py_eval(self.paired)
-  File "renpy/python.py", line 2276, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "renpy/python.py", line 2269, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/script.rpy", line 40, in <module>
-    hide Korst neutral with meveinleft
-NameError: name 'meveinleft' is not defined
+  File "game/script.rpy", line 87, in script call
+    call Option3
+  File "game/script.rpy", line 208, in script
+    scene bg town
+  File "/Volumes/renpy-7.4.11-sdk/renpy-7.4.11-sdk/renpy/ast.py", line 1323, in execute
+    statement_name("scene")
+  File "/Volumes/renpy-7.4.11-sdk/renpy-7.4.11-sdk/renpy/ast.py", line 46, in statement_name
+    i(name)
+  File "renpy/common/000window.rpy", line 111, in _window_auto_callback
+    _window_hide(auto=True)
+  File "renpy/common/000window.rpy", line 101, in _window_hide
+    renpy.with_statement(trans)
+  File "/Volumes/renpy-7.4.11-sdk/renpy-7.4.11-sdk/renpy/exports.py", line 1684, in with_statement
+    return renpy.game.interface.do_with(trans, paired, clear=clear)
+  File "/Volumes/renpy-7.4.11-sdk/renpy-7.4.11-sdk/renpy/display/core.py", line 2762, in do_with
+    clear=clear)
+  File "/Volumes/renpy-7.4.11-sdk/renpy-7.4.11-sdk/renpy/display/core.py", line 3325, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
+  File "/Volumes/renpy-7.4.11-sdk/renpy-7.4.11-sdk/renpy/display/core.py", line 4025, in interact_core
+    renpy.audio.audio.periodic()
+  File "/Volumes/renpy-7.4.11-sdk/renpy-7.4.11-sdk/renpy/audio/audio.py", line 1162, in periodic
+    raise_(exc[0], exc[1], exc[2])
+  File "/Volumes/renpy-7.4.11-sdk/renpy-7.4.11-sdk/renpy/audio/audio.py", line 1140, in periodic_thread_main
+    periodic_pass()
+  File "/Volumes/renpy-7.4.11-sdk/renpy-7.4.11-sdk/renpy/audio/audio.py", line 1082, in periodic_pass
+    c.periodic()
+  File "/Volumes/renpy-7.4.11-sdk/renpy-7.4.11-sdk/renpy/audio/audio.py", line 518, in periodic
+    topf = load(filename)
+  File "/Volumes/renpy-7.4.11-sdk/renpy-7.4.11-sdk/renpy/audio/audio.py", line 69, in load
+    rv = renpy.loader.load(fn)
+  File "/Volumes/renpy-7.4.11-sdk/renpy-7.4.11-sdk/renpy/loader.py", line 798, in load
+    raise IOError("Couldn't find file '%s'." % name)
+IOError: Couldn't find file 'audio/Land of Wolves/WAV_02_A_Tipsy_Tavern_loop'.
 
-Windows-10-10.0.19041
+Darwin-20.6.0-x86_64-i386-64bit
 Ren'Py 7.4.11.2266
 Knights Heart 1.0
-Tue Apr 19 18:09:58 2022
+Wed Jun  1 11:34:08 2022

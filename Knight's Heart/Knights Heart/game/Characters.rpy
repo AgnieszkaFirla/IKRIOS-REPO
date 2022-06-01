@@ -3,8 +3,9 @@
 
 define d = Character("Draenog", color = "#EEC58D", image="Draenog")
 define k = Character("Korst", color = "#EEC58D", image="Korst")
-define e = Character("Elanwe", color = "#EEC58D")
+define e = Character("Elanwe", color = "#EEC58D", image="Elanwe")
 define b1 = Character("Bandyta", color = "#EEC58D")
+define b2 = Character("Bandytka", color = "#EEC58D")
 
 # Lista sprintów
 
