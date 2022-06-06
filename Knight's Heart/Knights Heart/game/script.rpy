@@ -371,5 +371,7 @@ label Deathscreen:
     stop music
     play sound "audio/WAV_11_You're_Dead_1.mp3"
     play music "audio/Land of Wolves/WAV_03_Wandering_Lone_Wolf_loop.wav" loop fadein 1.0
-    call screen Deathscreen
+    scene deathscreen
+    pause(2.0)
+    call screen Deathscreen with dissolve
     return

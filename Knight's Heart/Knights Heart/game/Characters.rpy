@@ -34,6 +34,7 @@ image Bandytka = "Characters/Bandytka.png"
 
 image bg town = "Backgrounds/bg town.png"
 image ship sea = "Backgrounds/ship in sea.png"
+image deathscreen = "gui/deathscreen.png"
 
 # Lista sympatii
 

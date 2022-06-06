@@ -68,8 +68,8 @@ screen Rozdzial_1:
 screen Deathscreen:
     vbox:
         xalign 0.5
-        yalign 0.5
-        spacing 30
+        yalign 0.7
+        spacing 500
         frame:
             xpadding 100
             ypadding 50
