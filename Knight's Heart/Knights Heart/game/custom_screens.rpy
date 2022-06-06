@@ -37,3 +37,54 @@ screen UznanieUI:
         yoffset 30
         idle "gui/backbox.png"
         action Return()
+
+#koniec rozdziału 1
+
+screen Rozdzial_1:
+    add "gui/main_menu.png"
+    vbox:
+        xalign 0.5
+        yalign 0.5
+        spacing 30
+        frame:
+            xpadding 70
+            ypadding 50
+            xalign 0.5
+            yalign 0.5
+
+
+            vbox:
+                spacing 10
+                text "Rozdzał 1" size 60 xalign 0.7
+                text "ukończony" size 40 xalign 0.5
+
+        frame:
+            xpadding 40
+            ypadding 20
+            xalign 0.5
+            yalign 0.5
+            textbutton _("Main Menu") action MainMenu()
+
+screen Deathscreen:
+    vbox:
+        xalign 0.5
+        yalign 0.5
+        spacing 30
+        frame:
+            xpadding 100
+            ypadding 50
+            xalign 0.5
+            yalign 0.5
+
+
+            vbox:
+                spacing 10
+                text "Poległeś" size 60 xalign 0.5
+                text "Zdar przybył po twą duszę" size 40 xalign 0.5
+
+        frame:
+            xpadding 40
+            ypadding 20
+            xalign 0.5
+            yalign 0.5
+            textbutton _("Main Menu") action MainMenu()

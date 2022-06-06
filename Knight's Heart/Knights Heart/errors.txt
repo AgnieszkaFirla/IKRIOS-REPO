@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 177: end of line expected.
-    "Wy ścierwa! Zapłacicie za to życiem!" "{i}(Walka)":
-                                                       ^
+File "game/script.rpy", line 167: ATL statement contains two expressions in a row; is one of them a misspelled property? If not, separate them with pass.
+    window auto show
+                ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Wed Jun  1 14:53:52 2022
+Fri Jun  3 13:04:53 2022

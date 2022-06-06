@@ -6,6 +6,7 @@ define k = Character("Korst", color = "#EEC58D", image="Korst")
 define e = Character("Elanwe", color = "#EEC58D", image="Elanwe")
 define b1 = Character("Bandyta", color = "#EEC58D")
 define b2 = Character("Bandytka", color = "#EEC58D")
+define el = Character("Elfka", color = "#EEC58D")
 
 # Lista sprintów
 
@@ -26,6 +27,13 @@ image Korst angry = "Characters/Korst/Korst angry.png"
 image Korst sad = "Characters/Korst/Korst sad.png"
 image Korst happy = "Characters/Korst/Korst happy.png"
 
+image Bandyta = "Characters/Bandyta.png"
+image Bandytka = "Characters/Bandytka.png"
+
+# Lista teł
+
+image bg town = "Backgrounds/bg town.png"
+image ship sea = "Backgrounds/ship in sea.png"
 
 # Lista sympatii
 
