@@ -223,7 +223,7 @@ style choice_button_text is button_text
 
 style choice_vbox:
     xalign 0.5
-    ypos 405
+    ypos 555
     yanchor 0.5
 
     spacing gui.choice_spacing
@@ -359,6 +359,7 @@ screen main_menu():
 
     add gui.main_menu_background
 
+
     ## This empty frame darkens the main menu.
     frame:
         style "main_menu_frame"
@@ -385,7 +386,9 @@ style main_menu_text is gui_text
 style main_menu_title is main_menu_text
 style main_menu_version is main_menu_text
 
+
 style main_menu_frame:
+    yalign 1.0
     xsize 420
     yfill True
 
