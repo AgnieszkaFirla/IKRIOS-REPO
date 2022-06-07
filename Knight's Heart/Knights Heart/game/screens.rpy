@@ -255,11 +255,11 @@ screen quick_menu():
             xalign 0.5
             yalign 1.0
 
-            textbutton _("Back") action Rollback()
-            textbutton _("History") action ShowMenu('history')
-            textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("Save") action ShowMenu('save')
-            textbutton _("Options") action ShowMenu('preferences')
+            textbutton _("Cofnij") action Rollback()
+            textbutton _("Historia") action ShowMenu('history')
+            textbutton _("Pomiń") action Skip() alternate Skip(fast=True, confirm=True)
+            textbutton _("Zapisz") action ShowMenu('save')
+            textbutton _("Opcje") action ShowMenu('preferences')
 
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
@@ -305,13 +305,13 @@ screen navigation():
 
         else:
 
-            textbutton _("History") action ShowMenu("history")
+            textbutton _("Historia") action ShowMenu("history")
 
-            textbutton _("Save") action ShowMenu("save")
+            textbutton _("Zapisz") action ShowMenu("save")
 
-        textbutton _("Load") action ShowMenu("load")
+        textbutton _("Wczytaj") action ShowMenu("load")
 
-        textbutton _("Preferences") action ShowMenu("preferences")
+        textbutton _("Preferencje") action ShowMenu("preferences")
 
         if _in_replay:
 
@@ -319,20 +319,20 @@ screen navigation():
 
         elif not main_menu:
 
-            textbutton _("Main Menu") action MainMenu()
+            textbutton _("Menu Główne") action MainMenu()
 
-        textbutton _("About") action ShowMenu("about")
+        #textbutton _("About") action ShowMenu("about")
 
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
             ## Help isn't necessary or relevant to mobile devices.
-            textbutton _("Help") action ShowMenu("help")
+            textbutton _("Pomoc") action ShowMenu("help")
 
         if renpy.variant("pc"):
 
             ## The quit button is banned on iOS and unnecessary on Android and
             ## Web.
-            textbutton _("Quit") action Quit(confirm=not main_menu)
+            textbutton _("Wyjdź") action Quit(confirm=not main_menu)
 
 
 style navigation_button is gui_button
@@ -553,7 +553,7 @@ screen about():
     ## This use statement includes the game_menu screen inside this one. The
     ## vbox child is then included inside the viewport inside the game_menu
     ## screen.
-    use game_menu(_("About"), scroll="viewport"):
+    use game_menu(_("O grze"), scroll="viewport"):
 
         style_prefix "about"
 
@@ -590,19 +590,19 @@ screen save():
 
     tag menu
 
-    use file_slots(_("Save"))
+    use file_slots(_("Zapisz"))
 
 
 screen load():
 
     tag menu
 
-    use file_slots(_("Load"))
+    use file_slots(_("Wczytaj"))
 
 
 screen file_slots(title):
 
-    default page_name_value = FilePageNameInputValue(pattern=_("Page {}"), auto=_("Automatic saves"), quick=_("Quick saves"))
+    default page_name_value = FilePageNameInputValue(pattern=_("Strona {}"), auto=_("Automatyczny zapis"), quick=_("Szybki zapis"))
 
     use game_menu(title):
 
@@ -644,7 +644,7 @@ screen file_slots(title):
 
                         add FileScreenshot(slot) xalign 0.5
 
-                        text FileTime(slot, format=_("{#file_time}%A, %B %d %Y, %H:%M"), empty=_("empty slot")):
+                        text FileTime(slot, format=_("{#file_time}%A, %B %d %Y, %H:%M"), empty=_("pusty slot")):
                             style "slot_time_text"
 
                         text FileSaveName(slot):
@@ -719,7 +719,7 @@ screen preferences():
 
     tag menu
 
-    use game_menu(_("Preferences"), scroll="viewport"):
+    use game_menu(_("Preferencje"), scroll="viewport"):
 
         vbox:
 
@@ -730,23 +730,23 @@ screen preferences():
 
                     vbox:
                         style_prefix "radio"
-                        label _("Display")
-                        textbutton _("Window") action Preference("display", "window")
-                        textbutton _("Fullscreen") action Preference("display", "fullscreen")
+                        label _("Wyświetlacz")
+                        textbutton _("Okno") action Preference("display", "window")
+                        textbutton _("Pełny Ekran") action Preference("display", "fullscreen")
 
                 vbox:
                     style_prefix "radio"
-                    label _("Rollback Side")
-                    textbutton _("Disable") action Preference("rollback side", "disable")
-                    textbutton _("Left") action Preference("rollback side", "left")
-                    textbutton _("Right") action Preference("rollback side", "right")
+                    label _("Strona cofania")
+                    textbutton _("Wyłącz") action Preference("rollback side", "disable")
+                    textbutton _("Lewa") action Preference("rollback side", "left")
+                    textbutton _("Prawa") action Preference("rollback side", "right")
 
                 vbox:
                     style_prefix "check"
-                    label _("Skip")
-                    textbutton _("Unseen Text") action Preference("skip", "toggle")
-                    textbutton _("After Choices") action Preference("after choices", "toggle")
-                    textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
+                    label _("Pomijanie")
+                    textbutton _("Niewidziany tekst") action Preference("skip", "toggle")
+                    textbutton _("Po wyborze") action Preference("after choices", "toggle")
+                    textbutton _("Przejścia") action InvertSelected(Preference("transitions", "toggle"))
 
                 ## Additional vboxes of type "radio_pref" or "check_pref" can be
                 ## added here, to add additional creator-defined preferences.
@@ -759,25 +759,25 @@ screen preferences():
 
                 vbox:
 
-                    label _("Text Speed")
+                    label _("Szybkość tekstu")
 
                     bar value Preference("text speed")
 
-                    label _("Auto-Forward Time")
+                    label _("Czas automatycznego przewijania")
 
                     bar value Preference("auto-forward time")
 
                 vbox:
 
                     if config.has_music:
-                        label _("Music Volume")
+                        label _("Głośność Muzyki")
 
                         hbox:
                             bar value Preference("music volume")
 
                     if config.has_sound:
 
-                        label _("Sound Volume")
+                        label _("Głośność Dźwięków")
 
                         hbox:
                             bar value Preference("sound volume")
@@ -787,7 +787,7 @@ screen preferences():
 
 
                     if config.has_voice:
-                        label _("Voice Volume")
+                        label _("Głośność Głosów")
 
                         hbox:
                             bar value Preference("voice volume")
@@ -798,7 +798,7 @@ screen preferences():
                     if config.has_music or config.has_sound or config.has_voice:
                         null height gui.pref_spacing
 
-                        textbutton _("Mute All"):
+                        textbutton _("Wycisz Wszystko"):
                             action Preference("all mute", "toggle")
                             style "mute_all_button"
 
@@ -889,7 +889,7 @@ screen history():
     ## Avoid predicting this screen, as it can be very large.
     predict False
 
-    use game_menu(_("History"), scroll=("vpgrid" if gui.history_height else "viewport"), yinitial=1.0):
+    use game_menu(_("Historia"), scroll=("vpgrid" if gui.history_height else "viewport"), yinitial=1.0):
 
         style_prefix "history"
 
@@ -917,7 +917,7 @@ screen history():
                     substitute False
 
         if not _history_list:
-            label _("The dialogue history is empty.")
+            label _("Historia dialogu jest pusta.")
 
 
 ## This determines what tags are allowed to be displayed on the history screen.
@@ -1167,8 +1167,8 @@ screen confirm(message, yes_action, no_action):
                 xalign 0.5
                 spacing 150
 
-                textbutton _("Yes") action yes_action
-                textbutton _("No") action no_action
+                textbutton _("Tak") action yes_action
+                textbutton _("Nie") action no_action
 
     ## Right-click and escape answer "no".
     key "game_menu" action no_action
@@ -1214,7 +1214,7 @@ screen skip_indicator():
         hbox:
             spacing 9
 
-            text _("Skipping")
+            text _("Pomijanie")
 
             text "▸" at delayed_blink(0.0, 1.0) style "skip_triangle"
             text "▸" at delayed_blink(0.2, 1.0) style "skip_triangle"
@@ -1434,8 +1434,8 @@ screen quick_menu():
             xalign 0.5
             yalign 1.0
 
-            textbutton _("Back") action Rollback()
-            textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
+            textbutton _("Wróć") action Rollback()
+            textbutton _("Pomiń") action Skip() alternate Skip(fast=True, confirm=True)
             textbutton _("Auto") action Preference("auto-forward", "toggle")
             textbutton _("Menu") action ShowMenu()
 

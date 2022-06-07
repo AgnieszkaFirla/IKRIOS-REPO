@@ -63,7 +63,7 @@ screen Rozdzial_1:
             ypadding 20
             xalign 0.5
             yalign 0.5
-            textbutton _("Main Menu") action MainMenu()
+            textbutton _("Menu Główne") action MainMenu()
 
 screen Deathscreen:
     vbox:
@@ -87,4 +87,4 @@ screen Deathscreen:
             ypadding 20
             xalign 0.5
             yalign 0.5
-            textbutton _("Main Menu") action MainMenu()
+            textbutton _("Menu Główne") action MainMenu()
