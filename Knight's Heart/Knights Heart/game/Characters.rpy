@@ -36,6 +36,9 @@ image Elanwe suprise = "Characters/Elanwe/Elanwe angry.png"
 image Bandyta = "Characters/Bandyta.png"
 image Bandytka = "Characters/Bandytka.png"
 
+image ember1 = Fixed(SnowBlossom("gui/ember1.png",40,xspeed=(10, 40),yspeed=(-50, -100), start=10))
+image ember2 = Fixed(SnowBlossom("gui/ember2.png",30,xspeed=(10, 40),yspeed=(-50, -100), start=10))
+
 # Lista teł
 
 image bg town = "Backgrounds/bg town.png"

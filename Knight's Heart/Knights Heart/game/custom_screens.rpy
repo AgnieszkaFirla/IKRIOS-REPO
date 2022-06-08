@@ -88,3 +88,7 @@ screen Deathscreen:
             xalign 0.5
             yalign 0.5
             textbutton _("Menu Główne") action MainMenu()
+
+screen Snow:
+    add Snow("gui/ember1.png")
+    add Snow("gui/ember2.png")

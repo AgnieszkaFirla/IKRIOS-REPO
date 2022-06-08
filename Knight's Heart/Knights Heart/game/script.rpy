@@ -17,8 +17,11 @@ label start:
     scene bg forest
     show screen gameUI
     play music "audio/Land of Wolves/WAV_01_Land_of_Wolves_Main_Theme_loop.wav" loop fadein 1.0
-    add Snow("gui/ember1.png")
-    add Snow("gui/ember2.png")
+    show ember1
+    show ember2
+    #add Snow("gui/ember1.png")
+    #add Snow("gui/ember2.png")
+
 
     show Korst happy at right with moveinright
 

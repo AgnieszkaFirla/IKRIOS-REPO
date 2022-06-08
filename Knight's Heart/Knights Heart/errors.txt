@@ -2,13 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 20: expected statement.
+File "game/script.rpy", line 21: expected statement.
     add Snow("gui/ember1.png")
             ^
 
-File "game/script.rpy", line 21: expected statement.
+File "game/script.rpy", line 22: expected statement.
     add Snow("gui/ember2.png")
             ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Wed Jun  8 21:09:26 2022
+Wed Jun  8 21:33:29 2022
