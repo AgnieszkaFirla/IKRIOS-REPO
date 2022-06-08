@@ -294,8 +294,9 @@ screen navigation():
     vbox:
         style_prefix "navigation"
 
-        xpos gui.navigation_xpos
-        yalign 0.5
+
+        xoffset 100
+        ypos 280
 
         spacing gui.navigation_spacing
 
@@ -336,7 +337,7 @@ screen navigation():
 
 
 style navigation_button is gui_button
-style navigation_button_text is gui_button_text
+style navigation_ is gui_button_text
 
 style navigation_button:
     size_group "navigation"
@@ -344,6 +345,7 @@ style navigation_button:
 
 style navigation_button_text:
     properties gui.button_text_properties("navigation_button")
+    xalign 0.5
 
 
 ## Main Menu screen ############################################################
@@ -366,7 +368,54 @@ screen main_menu():
 
     ## The use statement includes another screen inside this one. The actual
     ## contents of the main menu are in the navigation screen.
-    use navigation
+    #use navigation
+    vbox:
+        style_prefix "navigation"
+
+        if main_menu:
+            xpos 268
+            yalign 0.5
+        #xpos gui.navigation_xpos
+        else:
+            xoffset 100
+            ypos 280
+
+        spacing gui.navigation_spacing
+
+        if main_menu:
+
+            textbutton _("Start") action Start()
+
+        else:
+
+            textbutton _("Historia") action ShowMenu("history")
+
+            textbutton _("Zapisz") action ShowMenu("save")
+
+        textbutton _("Wczytaj") action ShowMenu("load")
+
+        textbutton _("Preferencje") action ShowMenu("preferences")
+
+        if _in_replay:
+
+            textbutton _("End Replay") action EndReplay(confirm=True)
+
+        elif not main_menu:
+
+            textbutton _("Menu Główne") action MainMenu()
+
+        #textbutton _("About") action ShowMenu("about")
+
+        if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
+
+            ## Help isn't necessary or relevant to mobile devices.
+            textbutton _("Pomoc") action ShowMenu("help")
+
+        if renpy.variant("pc"):
+
+            ## The quit button is banned on iOS and unnecessary on Android and
+            ## Web.
+            textbutton _("Wyjdź") action Quit(confirm=not main_menu)
 
     if gui.show_name:
 

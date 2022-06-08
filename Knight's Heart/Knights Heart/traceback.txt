@@ -1,132 +1,48 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "renpy/common/00gamemenu.rpy", line 173, in script
-    $ ui.interact()
-  File "renpy/common/00gamemenu.rpy", line 173, in <module>
-    $ ui.interact()
-  File "game/screens.rpy", line 596, in execute
-    screen load():
-  File "game/screens.rpy", line 596, in execute
-    screen load():
-  File "game/screens.rpy", line 600, in execute
-    use file_slots(_("Wczytaj"))
-  File "game/screens.rpy", line 603, in execute
-    screen file_slots(title):
-  File "game/screens.rpy", line 603, in execute
-    screen file_slots(title):
-  File "game/screens.rpy", line 607, in execute
-    use game_menu(title):
-  File "game/screens.rpy", line 423, in execute
-    screen game_menu(title, scroll=None, yinitial=0.0):
-  File "game/screens.rpy", line 423, in execute
-    screen game_menu(title, scroll=None, yinitial=0.0):
-  File "game/screens.rpy", line 432, in execute
-    frame:
-  File "game/screens.rpy", line 435, in execute
-    hbox:
-  File "game/screens.rpy", line 441, in execute
-    frame:
-  File "game/screens.rpy", line 444, in execute
-    if scroll == "viewport":
-  File "game/screens.rpy", line 475, in execute
-    transclude
-  File "game/screens.rpy", line 607, in execute
-    use game_menu(title):
-  File "game/screens.rpy", line 609, in execute
-    fixed:
-  File "game/screens.rpy", line 656, in execute
-    hbox:
-  File "game/screens.rpy", line 673, in execute
-    for page in range(1, 10):
-  File "game/screens.rpy", line 674, in execute
-    textbutton "[strona]" action FilePage(page)
-NameError: Name 'strona' is not defined.
+  File "renpy/common/00start.rpy", line 207, in script call
+    call _gl_test
+  File "renpy/common/00gltest.rpy", line 390, in script
+    $ __gl_test()
+  File "renpy/common/00gltest.rpy", line 390, in <module>
+    $ __gl_test()
+  File "renpy/common/00gltest.rpy", line 317, in _m1_00gltest__gl_test
+    _gl_performance_test()
+  File "renpy/common/00gltest.rpy", line 342, in _gl_performance_test
+    ui.interact(suppress_underlay=True, suppress_overlay=True)
+Exception: CoreAudio error (AudioQueueStart): -66681
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/common/00gamemenu.rpy", line 173, in script
-    $ ui.interact()
+  File "renpy/common/00start.rpy", line 207, in script call
+    call _gl_test
+  File "renpy/common/00gltest.rpy", line 390, in script
+    $ __gl_test()
   File "/Volumes/renpy-7.4.11-sdk/renpy-7.4.11-sdk/renpy/ast.py", line 928, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "/Volumes/renpy-7.4.11-sdk/renpy-7.4.11-sdk/renpy/python.py", line 2245, in py_exec_bytecode
     exec(bytecode, globals, locals)
-  File "renpy/common/00gamemenu.rpy", line 173, in <module>
-    $ ui.interact()
+  File "renpy/common/00gltest.rpy", line 390, in <module>
+    $ __gl_test()
+  File "renpy/common/00gltest.rpy", line 317, in _m1_00gltest__gl_test
+    _gl_performance_test()
+  File "renpy/common/00gltest.rpy", line 342, in _gl_performance_test
+    ui.interact(suppress_underlay=True, suppress_overlay=True)
   File "/Volumes/renpy-7.4.11-sdk/renpy-7.4.11-sdk/renpy/ui.py", line 298, in interact
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "/Volumes/renpy-7.4.11-sdk/renpy-7.4.11-sdk/renpy/display/core.py", line 3325, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
-  File "/Volumes/renpy-7.4.11-sdk/renpy-7.4.11-sdk/renpy/display/core.py", line 3737, in interact_core
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "/Volumes/renpy-7.4.11-sdk/renpy-7.4.11-sdk/renpy/display/core.py", line 568, in visit_all
-    d.visit_all(callback, seen)
-  File "/Volumes/renpy-7.4.11-sdk/renpy-7.4.11-sdk/renpy/display/core.py", line 568, in visit_all
-    d.visit_all(callback, seen)
-  File "/Volumes/renpy-7.4.11-sdk/renpy-7.4.11-sdk/renpy/display/core.py", line 568, in visit_all
-    d.visit_all(callback, seen)
-  File "/Volumes/renpy-7.4.11-sdk/renpy-7.4.11-sdk/renpy/display/screen.py", line 436, in visit_all
-    callback(self)
-  File "/Volumes/renpy-7.4.11-sdk/renpy-7.4.11-sdk/renpy/display/core.py", line 3737, in <lambda>
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "/Volumes/renpy-7.4.11-sdk/renpy-7.4.11-sdk/renpy/display/screen.py", line 447, in per_interact
-    self.update()
-  File "/Volumes/renpy-7.4.11-sdk/renpy-7.4.11-sdk/renpy/display/screen.py", line 637, in update
-    self.screen.function(**self.scope)
-  File "game/screens.rpy", line 596, in execute
-    screen load():
-  File "game/screens.rpy", line 596, in execute
-    screen load():
-  File "game/screens.rpy", line 600, in execute
-    use file_slots(_("Wczytaj"))
-  File "game/screens.rpy", line 603, in execute
-    screen file_slots(title):
-  File "game/screens.rpy", line 603, in execute
-    screen file_slots(title):
-  File "game/screens.rpy", line 607, in execute
-    use game_menu(title):
-  File "game/screens.rpy", line 423, in execute
-    screen game_menu(title, scroll=None, yinitial=0.0):
-  File "game/screens.rpy", line 423, in execute
-    screen game_menu(title, scroll=None, yinitial=0.0):
-  File "game/screens.rpy", line 432, in execute
-    frame:
-  File "game/screens.rpy", line 435, in execute
-    hbox:
-  File "game/screens.rpy", line 441, in execute
-    frame:
-  File "game/screens.rpy", line 444, in execute
-    if scroll == "viewport":
-  File "game/screens.rpy", line 475, in execute
-    transclude
-  File "game/screens.rpy", line 607, in execute
-    use game_menu(title):
-  File "game/screens.rpy", line 609, in execute
-    fixed:
-  File "game/screens.rpy", line 656, in execute
-    hbox:
-  File "game/screens.rpy", line 673, in execute
-    for page in range(1, 10):
-  File "game/screens.rpy", line 674, in execute
-    textbutton "[strona]" action FilePage(page)
-  File "/Volumes/renpy-7.4.11-sdk/renpy-7.4.11-sdk/renpy/ui.py", line 991, in _textbutton
-    text = renpy.text.text.Text(label, style=text_style, substitute=substitute, scope=scope, **text_kwargs)
-  File "/Volumes/renpy-7.4.11-sdk/renpy-7.4.11-sdk/renpy/text/text.py", line 1574, in __init__
-    self.set_text(text, scope, substitute)
-  File "/Volumes/renpy-7.4.11-sdk/renpy-7.4.11-sdk/renpy/text/text.py", line 1693, in set_text
-    i, did_sub = renpy.substitutions.substitute(i, scope, substitute)
-  File "/Volumes/renpy-7.4.11-sdk/renpy-7.4.11-sdk/renpy/substitutions.py", line 270, in substitute
-    s = formatter.vformat(s, (), kwargs)
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/string.py", line 563, in vformat
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/string.py", line 585, in _vformat
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/string.py", line 646, in get_field
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/string.py", line 605, in get_value
-  File "/Volumes/renpy-7.4.11-sdk/renpy-7.4.11-sdk/renpy/substitutions.py", line 228, in __getitem__
-    raise NameError("Name '{}' is not defined.".format(key))
-NameError: Name 'strona' is not defined.
+  File "/Volumes/renpy-7.4.11-sdk/renpy-7.4.11-sdk/renpy/display/core.py", line 3286, in interact
+    self.start()
+  File "/Volumes/renpy-7.4.11-sdk/renpy-7.4.11-sdk/renpy/display/core.py", line 2200, in start
+    renpy.audio.audio.init()
+  File "/Volumes/renpy-7.4.11-sdk/renpy-7.4.11-sdk/renpy/audio/audio.py", line 955, in init
+    renpysound.init(renpy.config.sound_sample_rate, 2, bufsize, False, renpy.config.equal_mono)
+  File "renpysound.pyx", line 390, in renpy.audio.renpysound.init
+  File "renpysound.pyx", line 98, in renpy.audio.renpysound.check_error
+Exception: CoreAudio error (AudioQueueStart): -66681
 
 Darwin-20.6.0-x86_64-i386-64bit
 Ren'Py 7.4.11.2266
 Knights Heart 1.0
-Tue Jun  7 11:24:25 2022
+Wed Jun  8 10:21:36 2022
