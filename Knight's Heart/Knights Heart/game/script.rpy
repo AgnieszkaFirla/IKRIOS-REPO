@@ -237,6 +237,8 @@ label E_rescew:
 
 label Town1:
     scene bg town with dissolve
+    show ember1
+    show ember2
     show Draenog neutral2 at left with moveinleft
     e "Wiem, że nie musiałeś tego robić, a mimo to naraziłeś swoje życie."
     d "Jestem pewien, że każdy postąpiłby tak samo."
@@ -254,6 +256,8 @@ label Town1:
 
 label Town2:
     scene bg town with dissolve
+    show ember1
+    show ember2
     show Draenog neutral2 at left with moveinleft
     "{i}Elanwe uśmiechnęła się lekko na słowa młodego kupca."
     e "Zdradziłam ci panie moje imię, a ja wciąż nie znam twego imienia."
@@ -343,6 +347,8 @@ label Port_E_Die:
 
     scene bg town with dissolve
     play music "audio/Land of Wolves/WAV_02_A_Tipsy_Tavern_loop.wav"
+    show ember1
+    show ember2
     show Korst sad at right with moveinright
     k "Zginęlibyśmy. Jeśli nawet udałoby się nam przeżyć, stracilibyśmy pieniądze pańskiego ojca."
     show Korst neutral with dissolve
@@ -382,8 +388,12 @@ label Wyrzuty:
     return
 
 label Rozdzial1:
-    #PUŚĆ MUZYKĘ ZE ZROBIONEJ MISJI
-    call screen Rozdzial_1
+    stop music
+    play sound "audio/WAV_10_Mission_Succesful.mp3"
+    scene ship sea
+    play music "audio/Land of Wolves/WAV_02_A_Tipsy_Tavern_loop.wav" fadein 7.0
+    pause(2.0)
+    call screen Rozdzial_1 with dissolve
     return
 
 label Deathscreen:

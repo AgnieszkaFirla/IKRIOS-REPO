@@ -2,13 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 21: expected statement.
-    add Snow("gui/ember1.png")
-            ^
-
-File "game/script.rpy", line 22: expected statement.
-    add Snow("gui/ember2.png")
-            ^
+File "game/script.rpy", line 395: expected end of line
+    play music "audio/Land of Wolves/WAV_02_A_Tipsy_Tavern_loop.wav" with pause(2.0)
+                                                                     ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Wed Jun  8 21:33:29 2022
+Wed Jun  8 22:10:26 2022

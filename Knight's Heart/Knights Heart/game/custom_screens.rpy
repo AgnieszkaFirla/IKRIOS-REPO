@@ -41,7 +41,7 @@ screen UznanieUI:
 #koniec rozdziału 1
 
 screen Rozdzial_1:
-    add "gui/main_menu.png"
+    #add "gui/main_menu.png"
     vbox:
         xalign 0.5
         yalign 0.5
