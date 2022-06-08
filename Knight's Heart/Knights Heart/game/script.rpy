@@ -327,8 +327,11 @@ label Hug:
     "{i}Draenog zbliżył się o krok do elfki. Niepewnie położył jej rękę na ramieniu."
     show Draenog happy2 with dissolve
     d "Płacz, ja nikomu nie powiem o tych łzach. Ona na nie zasługuje, a ty ich potrzebujesz."
+    hide Draenog happy2
+    hide Elanwe sad
+    show Hug with dissolve
     "{i} Po tych słowach elfka po prostu przytuliła się do larmianina. Schowała twarz w jego ramiona i zaczęła szlochać."
-    "{i} Draenog nie wiedział ile czasu stoją tak bez ruchu pośród drzew, niemych świadków serca pogrążonego w żałobie"
+    "{i} Draenog nie wiedział ile czasu stoją tak bez ruchu pośród drzew, niemych świadków serca pogrążonego w żałobie."
     "{i} W końcu szloch ucichł. Jej ramiona na powrót zaczęły zwolna unosić się i opadać z każdym oddechem. Odsunęła się od niego na krok."
     el "Miałeś rację. {i}Patrzyła na niego wielkimi, złotymi oczami."
     return

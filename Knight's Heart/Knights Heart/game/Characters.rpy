@@ -33,6 +33,8 @@ image Elanwe sad = "Characters/Elanwe/Elanwe sad.png"
 image Elanwe angry = "Characters/Elanwe/Elanwe angry.png"
 image Elanwe suprise = "Characters/Elanwe/Elanwe angry.png"
 
+image Hug = "Characters/Hug.png"
+
 image Bandyta = "Characters/Bandyta.png"
 image Bandytka = "Characters/Bandytka.png"
 
