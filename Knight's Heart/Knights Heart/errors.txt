@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/custom_screens.rpy", line 71: u'pause' is not a keyword argument or valid child for the screen statement.
-    pause(2.0)
-         ^
+File "game/script.rpy", line 20: expected statement.
+    add Snow("gui/ember1.png")
+            ^
+
+File "game/script.rpy", line 21: expected statement.
+    add Snow("gui/ember2.png")
+            ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Mon Jun  6 22:51:57 2022
+Wed Jun  8 21:09:26 2022
