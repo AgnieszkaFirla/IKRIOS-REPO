@@ -27,6 +27,12 @@ image Korst angry = "Characters/Korst/Korst angry.png"
 image Korst sad = "Characters/Korst/Korst sad.png"
 image Korst happy = "Characters/Korst/Korst happy.png"
 
+image Elanwe neutral = "Characters/Elanwe/Elanwe neutral.png"
+image Elanwe happy = "Characters/Elanwe/Elanwe happy.png"
+image Elanwe sad = "Characters/Elanwe/Elanwe sad.png"
+image Elanwe angry = "Characters/Elanwe/Elanwe angry.png"
+image Elanwe suprise = "Characters/Elanwe/Elanwe angry.png"
+
 image Bandyta = "Characters/Bandyta.png"
 image Bandytka = "Characters/Bandytka.png"
 

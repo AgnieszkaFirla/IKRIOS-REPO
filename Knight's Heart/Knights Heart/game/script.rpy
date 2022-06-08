@@ -193,7 +193,9 @@ label E_rescew:
     "{i} Bandyci widząc złoty deszcz monet rzucają się żeby je zebrać. Draenog wykorzystując sytuację uwalnia elfkę i umyka z nią w las."
     hide Bandyta at right with moveoutright
     play music "audio/Land of Wolves/WAV_03_Wandering_Lone_Wolf_loop.wav" loop fadein 1.0
+    show Elanwe neutral at right with moveinright
     "{i} Po jakimś czasie biegu głosy za ich plecami giną w ciszy i śpiewie ptaków. Elfka spogląda dużymi, płomiennymi oczami na larmianina."
+    show Elanwe sad with dissolve
     el "Gdyby nie ty...{i}Głos uwiązł jej w gardle, a oczy zaszły łzami."
     el "Estre zasłużyła na lepszy los."
 
@@ -300,14 +302,26 @@ label D_die2:
 
 label Hug:
     play music "audio/Land of Wolves/WAV_04_Fields_of_Sun_loop.wav" loop fadein 1.0
-    e "Nie przepraszaj... Gdyby nie ty, skonczyłabym tak, jak ona. {i}Żarliwe łzy zaczęły spływać po jej policzkach."
+    el "Nie przepraszaj... Gdyby nie ty, skonczyłabym tak, jak ona. {i}Żarliwe łzy zaczęły spływać po jej policzkach."
+
+    window auto hide
+    show Draenog neutral2:
+        subpixel True
+        xpos 0.0
+        linear 0.23 xpos 0.29
+    with Pause(0.33)
+    show Draenog neutral2:
+        xpos 0.29
+    window auto show
+
+
     "{i}Draenog zbliżył się o krok do elfki. Niepewnie położył jej rękę na ramieniu."
     show Draenog happy2 with dissolve
     d "Płacz, ja nikomu nie powiem o tych łzach. Ona na nie zasługuje, a ty ich potrzebujesz."
-    "{i} Po tych słowach Elanwe po prostu przytuliła się do larmianina. Schowała twarz w jego ramiona i zaczęła szlochać."
+    "{i} Po tych słowach elfka po prostu przytuliła się do larmianina. Schowała twarz w jego ramiona i zaczęła szlochać."
     "{i} Draenog nie wiedział ile czasu stoją tak bez ruchu pośród drzew, niemych świadków serca pogrążonego w żałobie"
     "{i} W końcu szloch ucichł. Jej ramiona na powrót zaczęły zwolna unosić się i opadać z każdym oddechem. Odsunęła się od niego na krok."
-    e "Miałeś rację. {i}Patrzyła na niego wielkimi, złotymi oczami."
+    el "Miałeś rację. {i}Patrzyła na niego wielkimi, złotymi oczami."
     return
 
 label NoHug:
