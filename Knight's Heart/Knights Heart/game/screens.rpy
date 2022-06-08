@@ -374,7 +374,7 @@ screen main_menu():
 
         if main_menu:
             xpos 268
-            yalign 0.5
+            ypos 420
         #xpos gui.navigation_xpos
         else:
             xoffset 100
