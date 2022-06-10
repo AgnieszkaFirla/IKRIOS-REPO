@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 395: expected end of line
-    play music "audio/Land of Wolves/WAV_02_A_Tipsy_Tavern_loop.wav" with pause(2.0)
-                                                                     ^
+File "game/screens.rpy", line 259: expected a keyword argument, colon, or end of line.
+    textbutton _("Cofnij") action Rollback() ]
+                                             ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Wed Jun  8 22:10:26 2022
+Thu Jun  9 15:50:30 2022

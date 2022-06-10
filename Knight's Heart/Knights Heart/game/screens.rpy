@@ -7,7 +7,7 @@ init offset = -1
 
 ################################################################################
 ## Styles
-################################################################################
+###############################################################################
 
 style default:
     properties gui.text_properties()
@@ -26,10 +26,11 @@ style gui_text:
 
 
 style button:
-    properties gui.button_properties("button")
+    properties gui.button_properties("button",)
+        #action [Play("sound", "click.mp3")]
 
 style button_text is gui_text:
-    properties gui.text_properties("button")
+    properties gui.text_properties("button",)
     yalign 0.5
 
 
@@ -255,11 +256,11 @@ screen quick_menu():
             xalign 0.5
             yalign 1.0
 
-            textbutton _("Cofnij") action Rollback()
-            textbutton _("Historia") action ShowMenu('history')
-            textbutton _("Pomiń") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("Zapisz") action ShowMenu('save')
-            textbutton _("Opcje") action ShowMenu('preferences')
+            textbutton _("Cofnij") action Rollback() hovered [ Play("sound", "audio/click.mp3") ]
+            textbutton _("Historia") action ShowMenu('history') hovered [ Play("sound", "audio/click.mp3") ]
+            textbutton _("Pomiń") action Skip() alternate Skip(fast=True, confirm=True) hovered [ Play("sound", "audio/click.mp3") ]
+            textbutton _("Zapisz") action ShowMenu('save') hovered [ Play("sound", "audio/click.mp3") ]
+            textbutton _("Opcje") action ShowMenu('preferences') hovered [ Play("sound", "audio/click.mp3") ]
 
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
@@ -302,38 +303,38 @@ screen navigation():
 
         if main_menu:
 
-            textbutton _("Start") action Start()
+            textbutton _("Start") action Start() hovered [ Play("sound", "audio/click.mp3") ]
 
         else:
 
-            textbutton _("Historia") action ShowMenu("history")
+            textbutton _("Historia") action ShowMenu("history") hovered [ Play("sound", "audio/click.mp3") ]
 
-            textbutton _("Zapisz") action ShowMenu("save")
+            textbutton _("Zapisz") action ShowMenu("save") hovered [ Play("sound", "audio/click.mp3") ]
 
-        textbutton _("Wczytaj") action ShowMenu("load")
+        textbutton _("Wczytaj") action ShowMenu("load") hovered [ Play("sound", "audio/click.mp3") ]
 
-        textbutton _("Preferencje") action ShowMenu("preferences")
+        textbutton _("Preferencje") action ShowMenu("preferences") hovered [ Play("sound", "audio/click.mp3") ]
 
         if _in_replay:
 
-            textbutton _("End Replay") action EndReplay(confirm=True)
+            textbutton _("End Replay") action EndReplay(confirm=True) hovered [ Play("sound", "audio/click.mp3") ]
 
         elif not main_menu:
 
-            textbutton _("Menu Główne") action MainMenu()
+            textbutton _("Menu Główne") action MainMenu() hovered [ Play("sound", "audio/click.mp3") ]
 
         #textbutton _("About") action ShowMenu("about")
 
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
             ## Help isn't necessary or relevant to mobile devices.
-            textbutton _("Pomoc") action ShowMenu("help")
+            textbutton _("Pomoc") action ShowMenu("help") hovered [ Play("sound", "audio/click.mp3") ]
 
         if renpy.variant("pc"):
 
             ## The quit button is banned on iOS and unnecessary on Android and
             ## Web.
-            textbutton _("Wyjdź") action Quit(confirm=not main_menu)
+            textbutton _("Wyjdź") action Quit(confirm=not main_menu) hovered [ Play("sound", "audio/click.mp3") ]
 
 
 style navigation_button is gui_button
@@ -384,38 +385,38 @@ screen main_menu():
 
         if main_menu:
 
-            textbutton _("Start") action Start()
+            textbutton _("Start") action Start() hovered [ Play("sound", "audio/click.mp3") ]
 
         else:
 
-            textbutton _("Historia") action ShowMenu("history")
+            textbutton _("Historia") action ShowMenu("history") hovered [ Play("sound", "audio/click.mp3") ]
 
-            textbutton _("Zapisz") action ShowMenu("save")
+            textbutton _("Zapisz") action ShowMenu("save") hovered [ Play("sound", "audio/click.mp3") ]
 
-        textbutton _("Wczytaj") action ShowMenu("load")
+        textbutton _("Wczytaj") action ShowMenu("load") hovered [ Play("sound", "audio/click.mp3") ]
 
-        textbutton _("Preferencje") action ShowMenu("preferences")
+        textbutton _("Preferencje") action ShowMenu("preferences") hovered [ Play("sound", "audio/click.mp3") ]
 
         if _in_replay:
 
-            textbutton _("End Replay") action EndReplay(confirm=True)
+            textbutton _("End Replay") action EndReplay(confirm=True) hovered [ Play("sound", "audio/click.mp3") ]
 
         elif not main_menu:
 
-            textbutton _("Menu Główne") action MainMenu()
+            textbutton _("Menu Główne") action MainMenu() hovered [ Play("sound", "audio/click.mp3") ]
 
         #textbutton _("About") action ShowMenu("about")
 
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
             ## Help isn't necessary or relevant to mobile devices.
-            textbutton _("Pomoc") action ShowMenu("help")
+            textbutton _("Pomoc") action ShowMenu("help") hovered [ Play("sound", "audio/click.mp3") ]
 
         if renpy.variant("pc"):
 
             ## The quit button is banned on iOS and unnecessary on Android and
             ## Web.
-            textbutton _("Wyjdź") action Quit(confirm=not main_menu)
+            textbutton _("Wyjdź") action Quit(confirm=not main_menu) hovered [ Play("sound", "audio/click.mp3") ]
 
     if gui.show_name:
 
@@ -525,7 +526,7 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 
     use navigation
 
-    textbutton _("Return"):
+    textbutton _("Wróć"):
         style "return_button"
 
         action Return()
@@ -1483,10 +1484,10 @@ screen quick_menu():
             xalign 0.5
             yalign 1.0
 
-            textbutton _("Wróć") action Rollback()
-            textbutton _("Pomiń") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("Auto") action Preference("auto-forward", "toggle")
-            textbutton _("Menu") action ShowMenu()
+            textbutton _("Wróć") action Rollback() hovered [ Play("sound", "audio/click.mp3") ]
+            textbutton _("Pomiń") action Skip() alternate Skip(fast=True, confirm=True) hovered [ Play("sound", "audio/click.mp3") ]
+            textbutton _("Auto") action Preference("auto-forward", "toggle") hovered [ Play("sound", "audio/click.mp3") ]
+            textbutton _("Menu") action ShowMenu() hovered [ Play("sound", "audio/click.mp3") ]
 
 
 style window:

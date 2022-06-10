@@ -1,35 +1,27 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 74, in script call
-    call Option3
-  File "game/script.rpy", line 394, in script
-    scene ship sea
-  File "renpy/common/000window.rpy", line 111, in _window_auto_callback
-    _window_hide(auto=True)
-  File "renpy/common/000window.rpy", line 101, in _window_hide
-    renpy.with_statement(trans)
-IOError: Couldn't find file 'audio/Land of Wolves/WAV_10_Mission_Succesful.mp3'.
+  File "game/script.rpy", line 29, in script
+    k "Lord Hegar będzie zachwycony... i dumny. Widać, że pieniądze zainwestowane w pańską edukację przynoszą owoce."
+IOError: Couldn't find file 'audio/click.png'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 74, in script call
-    call Option3
-  File "game/script.rpy", line 394, in script
-    scene ship sea
-  File "renpy/ast.py", line 1323, in execute
-    statement_name("scene")
-  File "renpy/ast.py", line 46, in statement_name
-    i(name)
-  File "renpy/common/000window.rpy", line 111, in _window_auto_callback
-    _window_hide(auto=True)
-  File "renpy/common/000window.rpy", line 101, in _window_hide
-    renpy.with_statement(trans)
-  File "renpy/exports.py", line 1684, in with_statement
-    return renpy.game.interface.do_with(trans, paired, clear=clear)
-  File "renpy/display/core.py", line 2762, in do_with
-    clear=clear)
+  File "game/script.rpy", line 29, in script
+    k "Lord Hegar będzie zachwycony... i dumny. Widać, że pieniądze zainwestowane w pańską edukację przynoszą owoce."
+  File "renpy/ast.py", line 721, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "renpy/exports.py", line 1419, in say
+    who(what, *args, **kwargs)
+  File "renpy/character.py", line 1249, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "renpy/character.py", line 901, in do_display
+    **display_args)
+  File "renpy/character.py", line 647, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "renpy/ui.py", line 298, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "renpy/display/core.py", line 3325, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
   File "renpy/display/core.py", line 4025, in interact_core
@@ -46,9 +38,9 @@ Full traceback:
     rv = renpy.loader.load(fn)
   File "renpy/loader.py", line 798, in load
     raise IOError("Couldn't find file '%s'." % name)
-IOError: Couldn't find file 'audio/Land of Wolves/WAV_10_Mission_Succesful.mp3'.
+IOError: Couldn't find file 'audio/click.png'.
 
 Windows-10-10.0.19041
 Ren'Py 7.4.11.2266
 Knights Heart 1.0
-Wed Jun  8 22:07:38 2022
+Thu Jun  9 16:06:38 2022
