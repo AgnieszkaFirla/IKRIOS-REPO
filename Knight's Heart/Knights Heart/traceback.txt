@@ -1,46 +1,34 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 29, in script
-    k "Lord Hegar będzie zachwycony... i dumny. Widać, że pieniądze zainwestowane w pańską edukację przynoszą owoce."
-IOError: Couldn't find file 'audio/click.png'.
+  File "renpy/common/00keymap.rpy", line 469, in script
+    python hide:
+  File "renpy/common/00keymap.rpy", line 469, in <module>
+    python hide:
+  File "renpy/common/00keymap.rpy", line 488, in _execute_python_hide
+    renpy.save("_reload-1", "reload save game")
+Exception: Not saved - no valid save locations.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 29, in script
-    k "Lord Hegar będzie zachwycony... i dumny. Widać, że pieniądze zainwestowane w pańską edukację przynoszą owoce."
-  File "renpy/ast.py", line 721, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "renpy/exports.py", line 1419, in say
-    who(what, *args, **kwargs)
-  File "renpy/character.py", line 1249, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "renpy/character.py", line 901, in do_display
-    **display_args)
-  File "renpy/character.py", line 647, in display_say
-    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
-  File "renpy/ui.py", line 298, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "renpy/display/core.py", line 3325, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
-  File "renpy/display/core.py", line 4025, in interact_core
-    renpy.audio.audio.periodic()
-  File "renpy/audio/audio.py", line 1162, in periodic
-    raise_(exc[0], exc[1], exc[2])
-  File "renpy/audio/audio.py", line 1140, in periodic_thread_main
-    periodic_pass()
-  File "renpy/audio/audio.py", line 1082, in periodic_pass
-    c.periodic()
-  File "renpy/audio/audio.py", line 518, in periodic
-    topf = load(filename)
-  File "renpy/audio/audio.py", line 69, in load
-    rv = renpy.loader.load(fn)
-  File "renpy/loader.py", line 798, in load
-    raise IOError("Couldn't find file '%s'." % name)
-IOError: Couldn't find file 'audio/click.png'.
+  File "renpy/common/00keymap.rpy", line 469, in script
+    python hide:
+  File "/Volumes/renpy-7.4.11-sdk/renpy-7.4.11-sdk/renpy/ast.py", line 928, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "/Volumes/renpy-7.4.11-sdk/renpy-7.4.11-sdk/renpy/python.py", line 2245, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "renpy/common/00keymap.rpy", line 469, in <module>
+    python hide:
+  File "renpy/common/00keymap.rpy", line 488, in _execute_python_hide
+    renpy.save("_reload-1", "reload save game")
+  File "/Volumes/renpy-7.4.11-sdk/renpy-7.4.11-sdk/renpy/loadsave.py", line 435, in save
+    location.save(slotname, sr)
+  File "/Volumes/renpy-7.4.11-sdk/renpy-7.4.11-sdk/renpy/savelocation.py", line 435, in save
+    raise Exception("Not saved - no valid save locations.")
+Exception: Not saved - no valid save locations.
 
-Windows-10-10.0.19041
+Darwin-20.6.0-x86_64-i386-64bit
 Ren'Py 7.4.11.2266
 Knights Heart 1.0
-Thu Jun  9 16:06:38 2022
+Fri Jun 10 17:21:13 2022

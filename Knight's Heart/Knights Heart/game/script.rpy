@@ -19,8 +19,6 @@ label start:
     play music "audio/Land of Wolves/WAV_01_Land_of_Wolves_Main_Theme_loop.wav" loop fadein 1.0
     show ember1
     show ember2
-    #add Snow("gui/ember1.png")
-    #add Snow("gui/ember2.png")
 
 
     show Korst happy at right with moveinright
@@ -214,6 +212,24 @@ label E_rescew:
 
     d "Chodźmy, w Kalaman czeka na nas statek. Jeśli chcesz możesz płynąć z nami. Zaraz..."
     show Draenog neutral2 with dissolve
+
+    window auto hide
+    show Elanwe neutral:
+        subpixel True
+        xpos 1.0
+        linear 0.3 xpos 0.69
+    show Draenog neutral2:
+        subpixel True
+        xpos 0.5
+        linear 0.3 xpos 0.18
+    with Pause(0.4)
+    show Elanwe neutral:
+        xpos 0.69
+    show Draenog neutral2:
+        xpos 0.18
+    window auto show
+
+
     d "Gdzie jest Korst?"
     show Korst neutral at right with moveinright
     "{i} Z pomiędzy drzew wybiegł Korst."
@@ -240,12 +256,18 @@ label Town1:
     show ember1
     show ember2
     show Draenog neutral2 at left with moveinleft
+    show Elanwe neutral at right with moveinleft
     e "Wiem, że nie musiałeś tego robić, a mimo to naraziłeś swoje życie."
     d "Jestem pewien, że każdy postąpiłby tak samo."
+    show Draenog happy2 with dissolve
     e "Zdradziłam ci swoje imię, ale ja wciąż nie znam twojego."
+    show Elanwe happy with dissolve
     d "Wybacz, pani, jak mogłem zapomnieć... Gdzie moje maniery? Jestem Draenog z rodu Jeża, a to Korst z rodu Hieny."
     d "Przybyliśmy do Dolhal sprzedać towar mego ojca, wielkiego kupca z Wysp Mell. Nasz statek czeka w porcie. Płyń z nami. Pokażę ci Wyspy, i ugoszczę w pałacyku na Szafirowym Wybrzeżu."
+    show Elanwe neutral with dissolve
     "{i}Elanwe zastanawiała się dłuższą chwilę. Rozejrzała się po Kalaman. Larmianach i elfach kłębiących się na ulicach portowego miasta. Widać w tym spojrzeniu zapłakanych oczu była tęsknota."
+    show Draenog neutral2 with dissolve
+    show Elanwe happy with dissolve
     e "Popłynę z tobą, Draenogu. Zostanę na Wyspach, przynajmniej na jakiś czas."
     show Draenog happy2 with dissolve
     d "Zatem zapraszam. Statek czeka."
@@ -259,14 +281,17 @@ label Town2:
     show ember1
     show ember2
     show Draenog neutral2 at left with moveinleft
+    show Elanwe happy at right with moveinright
     "{i}Elanwe uśmiechnęła się lekko na słowa młodego kupca."
     e "Zdradziłam ci panie moje imię, a ja wciąż nie znam twego imienia."
+    show Elanwe neutral with dissolve
     d "Wybacz, pani! Gdzie moje maniery? Jestem Draenog z rodu Jeża, a to Korst z rodu Hieny. Przybyliśmy do Dolhal sprzedać towar mego ojca, wielkiego kupca z Wysp Mell."
     d "Płyń znami na Wyspy. Pokażę ci Szafirowe Wybrzeże i Diamentowe Iglice. Moja rodzina przyjmnie cię w pałacyku jak córkę króla."
     "{i}Elanwe zastanawiała się dłuższą chwilę. Rozejrzała się po Kalaman. Larmianach i elfach kłębiących się na ulicach portowego miasta. Widać w tym spojrzeniu zapłakanych oczu była tęsknota."
     e "Popłynę z tobą, Draenogu. Chcę zobaczyć Szafirowe Wybrzeże i... chcę stąd uciec. Przynajmniej na jakiś czas."
     show Draenog happy2 with dissolve
     d "Zatem zapraszam. Statek czeka."
+    show Elanwe happy with dissolve
     "{i}Draenog wskazał uliczkę prowadzącą do portu zapraszającym gestem dłoni."
     jump Rozdzial1
     return
@@ -333,6 +358,9 @@ label Hug:
     "{i} Po tych słowach elfka po prostu przytuliła się do larmianina. Schowała twarz w jego ramiona i zaczęła szlochać."
     "{i} Draenog nie wiedział ile czasu stoją tak bez ruchu pośród drzew, niemych świadków serca pogrążonego w żałobie."
     "{i} W końcu szloch ucichł. Jej ramiona na powrót zaczęły zwolna unosić się i opadać z każdym oddechem. Odsunęła się od niego na krok."
+    hide Hug with dissolve
+    show Elanwe neutral at right
+    show Draenog neutral2
     el "Miałeś rację. {i}Patrzyła na niego wielkimi, złotymi oczami."
     return
 
